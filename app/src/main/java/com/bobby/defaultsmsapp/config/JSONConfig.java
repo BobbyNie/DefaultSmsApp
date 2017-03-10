@@ -1,7 +1,10 @@
 package com.bobby.defaultsmsapp.config;
 
+import android.os.Environment;
+
 import com.alibaba.fastjson.JSON;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -18,7 +21,9 @@ public class JSONConfig {
 
     private static JSONConfig loadConfigFromFile(String filePath){
         try {
-            FileReader fr = new FileReader(filePath);
+            File sd = Environment.getExternalStorageDirectory();
+            //boolean can_write = sd.canWrite();
+            FileReader fr = new FileReader(new File(sd,filePath));
             StringBuffer sb = new StringBuffer(512);
             char[] buff = new char[512];
             int count = -1;
@@ -73,7 +78,7 @@ public class JSONConfig {
 
     public synchronized static JSONConfig instance() {
         if(_instance == null){
-            _instance = loadConfigFromFile("/data/DefaultSmsAppConfig.json");
+            _instance = loadConfigFromFile("DefaultSmsApp/DefaultSmsAppConfig.json");
         }
         return _instance;
     }

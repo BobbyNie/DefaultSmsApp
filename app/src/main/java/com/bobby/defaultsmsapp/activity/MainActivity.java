@@ -22,7 +22,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.bobby.defaultsmsapp.listener.CallPhoneListener;
 import com.bobby.defaultsmsapp.service.TestService;
 
 import bobby.com.defaultsmsapp.R;
@@ -62,9 +61,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        //设置电话监听
-        CallPhoneListener.setListeners(this.getApplicationContext());
 
         setContentView(R.layout.activity_main);
 

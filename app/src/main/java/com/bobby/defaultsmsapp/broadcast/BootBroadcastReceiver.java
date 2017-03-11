@@ -4,7 +4,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import com.bobby.defaultsmsapp.listener.CallPhoneListener;
 import com.bobby.defaultsmsapp.activity.MainActivity;
 import com.bobby.defaultsmsapp.service.MsgSendService;
 
@@ -14,10 +13,6 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-
-        //设置电话监听
-        CallPhoneListener.setListeners(context.getApplicationContext());
-
         // 开机启动的Service
         Intent serviceIntent = new Intent(context, MsgSendService.class);
         // 启动Service

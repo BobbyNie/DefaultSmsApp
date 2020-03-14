@@ -1,5 +1,6 @@
 package com.bobby.defaultsmsapp.utils;
 
+import com.alibaba.fastjson.JSON;
 import com.bobby.defaultsmsapp.config.JSONConfig;
 
 import org.json.JSONException;
@@ -25,7 +26,7 @@ public class WeChartSender {
 
 	// 发送微信消息
 	public static boolean sendWeChart(int appId,String msg) {
-		String token = getAccessToken();
+		String token = getAccessToken(""+appId);
 		try {
 			JSONObject data = new JSONObject();
 			data.put("touser", "@all");
@@ -100,13 +101,13 @@ public class WeChartSender {
 	 * 
 	 * @return
 	 */
-	public static String getAccessToken() {
+	public static String getAccessToken(String appid) {
 		if (System.currentTimeMillis() - accessTokenTime < 3000) {
 			return accessToken;
 		}
 		try {
 
-			URL url = new URL(accessTokenUrl);
+			URL url = new URL(accessTokenUrl+ JSONConfig.instance().getWeChartSecrets().get(appid));
 			HttpsURLConnection urlConnection = (HttpsURLConnection) url.openConnection();
 			try {
 				urlConnection.connect();
@@ -141,7 +142,7 @@ public class WeChartSender {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		sendWeChart(2,"test");
+		sendWeChart(1000003,"test");
 	}
 
 }

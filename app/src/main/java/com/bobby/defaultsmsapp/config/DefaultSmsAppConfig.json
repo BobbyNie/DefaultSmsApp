@@ -1,0 +1,59 @@
+{
+  "wechartAccessTokenUrl": "https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=xxxxxxx&corpsecret=",
+  "wechartMsgSendUrl": "https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=",
+  "defaultWechartAppIdForSubscription0": 1000001,
+  "defaultWechartAppIdForSubscription1": 1000002,
+  "hintForSubscription0": "186",
+  "hintForSubscription1": "134",
+  "mailForwardTo": "xxx@139.com,xxx@163.com",
+  "mailPassword": "xxxxxx",
+  "mailSubjectForSubscription0": "186短信",
+  "mailSubjectForSubscription1": "134短信",
+  "mailUrl": "smtp.163.com",
+  "mailUser": "xxxxxx@163.com",
+  "replaySmsFromNumbers": [
+    "1776xxxxxxx",
+    "153xxxxxxx",
+    "621xxxxxx"
+  ],
+  "smsForwardToNumbers": [
+    "186xxxxx",
+    "153xxxxx",
+    "177xxxxx"
+  ],
+  "weChartSecrets":{
+    "1000001": "TJGPN-DrxTXXVTMLEDAsBvxxxxx",
+    "1000002":"f3f_X5nuEHXNRggo3nDd9qrTxxxxxxxxxx",
+    "1000003":"xTj-xxxxxxxxxxxxxxx_xxxxxxxxxxx",
+    "1000004":"zuQ4Jxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  "withConditionsWechartAppIds": [
+    {
+      "appId": 1000003,
+      "bodyContains": [
+        "key1",
+        "关键词",
+        "幼儿园",
+        "学校"
+      ],
+      "isImport": true,
+      "senderContains": [
+        "10657061071"
+      ]
+    },
+    {
+      "appId": 1000005,
+      "bodyContains": [
+        "速递易",
+        "快件",
+        "快递",
+        "邮政"
+      ],
+      "isImport": false,
+      "senderContains": [
+        "1069008351542",
+        "10690188010055"
+      ]
+    }
+  ]
+}

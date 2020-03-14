@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.HashMap;
 
 /**
  * Created by niebo on 2017/3/8.
@@ -68,6 +69,7 @@ public class JSONConfig {
 
     private String[] replaySmsFromNumbers;
 
+    private HashMap<String,String> weChartSecrets;
 
     public void setWithConditionsWechartAppIds(WechartAppWithCondition[] withConditionsWechartAppIds) {
         this.withConditionsWechartAppIds = withConditionsWechartAppIds;
@@ -195,5 +197,13 @@ public class JSONConfig {
 
     public void setReplaySmsFromNumbers(String[] replaySmsFromNumbers) {
         this.replaySmsFromNumbers = replaySmsFromNumbers;
+    }
+
+    public HashMap<String, String> getWeChartSecrets() {
+        return weChartSecrets;
+    }
+
+    public void setWeChartSecrets(HashMap<String, String> weChartSecrets) {
+        this.weChartSecrets = weChartSecrets;
     }
 }
